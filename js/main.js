@@ -40,6 +40,16 @@ function init() {
     * Provide Scenario specific functions below within inti();
     */
     function scenarioOne() {
+        setTimeout(function(){
+            if ($('#sword_obtained').html() != "") {
+                $('#race').fadeOut();
+                $('#sword_obtained').fadeIn();
+                $('#sword_obtained').html("Oh, no! you must fight the dragon with the " + dragonSlayer.weapon);
+                $('#scenario_1').fadeOut(scenarioTwo());
+            }
+        }, 20000);
+
+
         $(document).keyup(function(event) {
             var horiz_pos = parseInt($('#drgn_slyr_1').css('left')),
                 vert_pos = parseInt($('#drgn_slyr_1').css('top')),
@@ -70,8 +80,14 @@ function init() {
                         right: b.position().left + a.width()
                     };
 
-                if (!((obj1.bottom < b.top) || (obj1.top > obj2.bottom) || (obj1.right < obj2.left) || (obj1.left > obj2.right)) ) {
-                    $('#scenario_1').fadeOut(scenarioTwo());
+                if (!((obj1.bottom < obj2.top) || (obj1.top > obj2.bottom) || (obj1.right < obj2.left) || (obj1.left > obj2.right)) ) {
+                    $drgnSlyr.weapon = "Sword of Destiny";
+                    $('#sword_obtained').html("Congratulations! you obtained the Sword of Destiny!");
+                    $('#race').fadeOut();
+                    $('#sword_obtained').fadeIn();
+                    setTimeout(function() {
+                        $('#scenario_1').fadeOut(scenarioTwo());
+                    }, 3000);
                 }
             }
 
