@@ -3,7 +3,9 @@ $(document).ready(init());
 function init() {
     var dragonSlayer = {
         name: '',
-        weapon: 'wimpy sword'
+        weapon: 'wimpy sword',
+        hp: 25,
+        atk: 5
     };
 
     $('#play-button').click(function() {
@@ -16,7 +18,7 @@ function init() {
             if(keycode == '13'){
                 var nameInput = $('#name-input').val();
                 dragonSlayer.name = (nameInput !== "") ? nameInput : "Master Dragon Slayer";
-                $('#welcome').html("<h2>Welcome, " + dragonSlayer.name + "!</h2><h4>Your village is under attack from a dragon who lives in the nearby hills. You have been chosen to slay the dragon and protect the villagers. In order to help you defeat the dragon you need to obtain a better sword</h4>");
+                $('#welcome').html("<h2>Welcome, " + dragonSlayer.name + "!</h2><h4>Your village is under attack from a dragon who lives in the nearby hills. You have been chosen to slay the dragon and protect the villagers. In order to help you defeat the dragon you need to obtain a better sword.<h3>Reach the Sword of Destiny before time runs out<br><br>Use the arrow keys to move!</h3></h4>");
                 $('#setup').fadeOut(function(){
                     $('#welcome').fadeIn();
                 });
@@ -85,8 +87,10 @@ function init() {
 
                 if (!((obj1.bottom < obj2.top) || (obj1.top > obj2.bottom) || (obj1.right < obj2.left) || (obj1.left > obj2.right)) ) {
                     $drgnSlyr.weapon = "Sword of Destiny";
-                    console.log("here")
                     $('#sword_obtained').html("<h1>Congratulations! <br>You obtained the Sword of Destiny!</h1>");
+                    dragonSlayer.hp = 50;
+                    dragonSlayer.atk = 15;
+
                     $('#race').fadeOut();
                     $('#sword_obtained').fadeIn();
 
@@ -101,9 +105,55 @@ function init() {
     
     function scenarioTwo(){
         $('#scenario_2').fadeIn();
+
+        $(document).one('keyup', function(event) {
+            $('#scen_2_text').fadeOut();
+            $('#hero_vs_drag').fadeIn();
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13') {
+                var dragon = {
+                    hp: 150,
+                    atk: 15
+                };
+
+                setTimeout(function() {
+                    setInterval(function() {
+                        dragonSlayer.hp -= dragon.atk;
+
+                        if (dragon.hp > 0) {
+                            if (dragonSlayer.hp < 1) {
+                                $('#scenario_2').fadeOut();
+                                $('#victory').fadeIn();
+                                $('#victory').html("<h1>Thou art Dead!<br><br>HA HA HA HA!<br><br>HA HA HA HA!</h1>")
+                            }
+                        }
+                    }, 1000);
+                }, 1000);
+
+                $(document).keyup(function(e) {
+                    var keycode = (e.keyCode ? e.keyCode : e.which);
+                    if(keycode == '13'){
+                        dragon.hp -= dragonSlayer.atk;
+
+                        if (dragonSlayer.hp > 0) {
+                            if (dragon.hp < 1) {
+                                $('#scenario_2').fadeOut();
+                                $('#victory').fadeIn();
+                                $('#victory').html("<h1>VICTORY!!!!<br><br>Huzzah!</h1><button type='button' id='play_again' class='button'><h2>PLAY AGAIN!</h2></button>");
+
+                                $('#play_again').click(function() {
+                                    location.reload();
+                                })
+                            }
+                        }
+
+                    }
+                });
+            }
+        });
     }
     
-    function scenarioThree(){
+    /*function scenarioThree(){
         $('scenario_3').fadeIn();
     }
     
@@ -113,6 +163,6 @@ function init() {
     
     function scenarioFive(){
         $('scenario_5').fadeIn();
-    }
+    }*/
     
 }

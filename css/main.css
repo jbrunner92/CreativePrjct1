@@ -16,18 +16,20 @@ html{
     text-shadow: 1px 1px white;
 }
 #play-button{
+}
+
+.button {
     color:darkblue;
     text-align: center;
 }
 
 #setup {
     display: none;
-    color: #ffffff;
 }
 
 #welcome{
     color: #ffffff;
-    
+
 }
 
 .scenarios{
@@ -52,8 +54,8 @@ html{
 
 #sword_1 {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    left: 50%;
+    top: 50%;
 }
 #scen_2_text{
     text-align: center;
@@ -73,7 +75,6 @@ html{
 }
 
 #sword_obtained {
-    color: #ffffff;
 }
 
 .center {
@@ -84,4 +85,29 @@ html{
     height:18em;
     margin-top: -9em; /*set to a negative number 1/2 of your height*/
     margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    color: crimson;
+}
+
+.trump_dragon_img {
+    position: absolute;
+    right: 5px;
+    content: url("../imgs/trump_dragon.jpg");
+    width: 300px;
+}
+
+#hero {
+    position: absolute;
+    left: 5px;
+    width: 250px;
+}
+
+#hero_vs_drag {
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    left: 5px;
+}
+
+#victory {
+    display: none;
 }
