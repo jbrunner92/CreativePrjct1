@@ -30,7 +30,7 @@ function init() {
 
     function generateGame() {
         $('#scenario_1').fadeIn();
-        //scenarioOne();
+        
         setTimeout(function() {
             scenarioOne();
         }, 1000);
@@ -63,7 +63,6 @@ function init() {
     
     function scenarioTwo(){
         $('#scenario_2').fadeIn();
-        $('#scenario_2').html("<div id = scen_2_text>After a short time you come to a crossroads. Which direction would you like to go?</div><div id = scen_2_options><input type = submit value = Left><input type = submit value = Right></div>");
     }
     
     function scenarioThree(){
