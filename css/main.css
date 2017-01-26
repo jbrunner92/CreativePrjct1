@@ -23,6 +23,11 @@ html{
     color:darkblue;
     text-align: center;
 }
+
+#setup {
+    display: none;
+}
+
 .scenarios{
     display: none;
 }
