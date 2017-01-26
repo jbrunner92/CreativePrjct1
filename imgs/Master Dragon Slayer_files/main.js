@@ -20,7 +20,6 @@ function init() {
                 var nameInput = $('#name-input').val();
                 dragonSlayer.name = (nameInput !== "") ? nameInput : "Master Dragon Slayer";
                 $('#welcome').html("<h2>Welcome, " + dragonSlayer.name + "!</h2><h4>Your village is under attack from a dragon who lives in the nearby hills. You have been chosen to slay the dragon and protect the villagers. In order to help you defeat the dragon you need to obtain a better sword.<h3>Reach the Sword of Destiny before time runs out<br><br>Use the arrow keys to move!</h3></h4>");
-                $('#hero_name').html("Master Dragon Slayer " + dragonSlayer.name);
                 $('#setup').fadeOut(function(){
                     $('#welcome').fadeIn();
                 });
@@ -115,8 +114,8 @@ function init() {
             var keycode = (event.keyCode ? event.keyCode : event.which);
             if(keycode == '13') {
                 var dragon = {
-                    maxHP: 250,
-                    hp: 250,
+                    maxHP: 150,
+                    hp: 150,
                     atk: 15
                 };
 
@@ -130,10 +129,7 @@ function init() {
                             if (dragonSlayer.hp < 1) {
                                 $('#scenario_2').fadeOut();
                                 $('#victory').fadeIn();
-                                $('#victory').html("<h1>Thou art Dead!<br><br>HA HA HA HA!<br><br>HA HA HA HA!</h1><button type='button' class='button' id='play_again_2'><h2>PLAY AGAIN!</h2></button>")
-                                $('#play_again_2').click(function() {
-                                    location.reload();
-                                })
+                                $('#victory').html("<h1>Thou art Dead!<br><br>HA HA HA HA!<br><br>HA HA HA HA!</h1>")
                             }
                         }
                     }, 1000);
@@ -151,6 +147,7 @@ function init() {
                                 $('#scenario_2').fadeOut();
                                 $('#victory').fadeIn();
                                 $('#victory').html("<h1>VICTORY!!!!<br><br>Huzzah!</h1><button type='button' id='play_again' class='button'><h2>PLAY AGAIN!</h2></button>");
+
                                 $('#play_again').click(function() {
                                     location.reload();
                                 })

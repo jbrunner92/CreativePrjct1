@@ -30,11 +30,28 @@
             <div id="scen_2_text">
                 <h4>After a long road through the hills and the valleys you have found the dragon.</h4>
                 <h2>It's slaying time!</h2>
-                <h4>Hit enter to battle!</h4>
+                <h3>Press Enter consecutively to hit the dragon.</h3>
+                <h4>Hit Enter Begin to battle!</h4>
             </div>
             <div id="hero_vs_drag">
-                <img id="hero" class="dragon_slayer_img" />
-                <img class="trump_dragon_img" />
+                <div style="display: inline-block; width: 250px; position: relative; float: right; margin-left: 15px;">
+                    <div style="margin-bottom: 15px;">
+                        <h3 id="hero_name"></h3>
+                        <span id="hero_hp_bar">
+                            <span id="hero_curr_hp"></span>
+                        </span>
+                    </div>
+                    <img id="hero" class="dragon_slayer_img" />
+                </div>
+                <div style="display: inline-block; width: 650px; position: relative; float: left;">
+                    <div style="margin-bottom: 15px;">
+                        <h3 id="drag_name">Trump Dragon</h3>
+                        <span id="drag_hp_bar">
+                            <span id="drag_curr_hp"></span>
+                        </span>
+                    </div>
+                    <img class="trump_dragon_img" />
+                </div>
             </div>
         </div>
         <div id="victory" class="center"></div>

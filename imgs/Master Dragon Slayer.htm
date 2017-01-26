@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)file:///Users/justinbrunner/Desktop/cs201/CreativePrjct1/html/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+    <link rel="stylesheet" type="text/css" href="./Master Dragon Slayer_files/main.css">
+    <script src="./Master Dragon Slayer_files/jquery.min.js"></script>
+    <title>Master Dragon Slayer</title>
+</head>
+<body>
+    <div class="main center" style="display: none;">
+        <h1 id="game-name">Master Dragon Slayer</h1>
+        <button type="button" id="play-button"><h2>PLAY!</h2></button>
+        <p>*Remember Kids, This is not a political message, just a fun game!</p>
+    </div>
+    <div id="scenario_list">
+        <div id="setup" class="center" style="display: none;">
+            <h3>Welcome to Master Dragon Slayer!</h3>
+            <p>Enter your name:</p>
+            <input type="text" id="name-input">
+        </div>
+        <div id="welcome" style="display: none;"><h2>Welcome, Master Dragon Slayer!</h2><h4>Your village is under attack from a dragon who lives in the nearby hills. You have been chosen to slay the dragon and protect the villagers. In order to help you defeat the dragon you need to obtain a better sword.</h4><h3>Reach the Sword of Destiny before time runs out<br><br>Use the arrow keys to move!</h3></div>
+        <div id="scenario_1" class="scenarios" style="display: none;">
+            <div id="race" style="display: none;">
+                <img id="drgn_slyr_1" class="dragon_slayer_img" style="top: 265px; left: 365px;">
+                <img id="sword_1" class="sword_img">
+            </div>
+            <div id="sword_obtained" class="center"><h1>Congratulations! <br>You obtained the Sword of Destiny!</h1></div>
+        </div>
+        <div id="scenario_2" class="scenarios center" style="display: none;">
+            <div id="scen_2_text" style="display: none;">
+                <h4>After a long road through the hills and the valleys you have found the dragon.</h4>
+                <h2>It's slaying time!</h2>
+                <h4>Hit enter to battle!</h4>
+            </div>
+            <div id="hero_vs_drag">
+                <span id="hero_hp_bar">
+                    <span id="hero_curr_hp" style="width: 0%;"></span>
+                </span>
+                <img id="hero" class="dragon_slayer_img">
+                <span id="drag_hp_bar">
+                    <span id="drag_curr_hp"></span>
+                </span>
+                <img class="trump_dragon_img">
+            </div>
+        </div>
+        <div id="victory" class="center" style="display: block;"><h1>Thou art Dead!<br><br>HA HA HA HA!<br><br>HA HA HA HA!</h1></div>
+        <div id="scenario_3" class="scenarios center">
+            <div>
+                <div id="scen_3_text"><h5>After a short time you come to a crossroads. Which road would you like to take?</h5>
+                <div id="scen_3_options">
+                <input type="button" value="Left">
+                <input type="button" value="Right">
+                </div>
+                </div>
+            </div>
+        </div>
+        <div id="scenario_4" class="scenarios">
+            <p>sfsf</p>
+        </div>
+
+<script src="./Master Dragon Slayer_files/main.js"></script>
+</div></body></html>

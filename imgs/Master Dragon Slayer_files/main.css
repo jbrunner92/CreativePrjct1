@@ -2,11 +2,6 @@ html{
     background-image: url("http://wallpapers-and-backgrounds.net/wp-content/uploads/2015/11/dragon-age-inquisition-wallpaper_1.jpg");
     width: 100%;
 }
-
-body {
-    width: 900px;
-}
-
 .main{}
 
 .main button{
@@ -94,22 +89,21 @@ body {
 }
 
 .trump_dragon_img {
+    position: absolute;
+    right: 5px;
     content: url("../imgs/trump_dragon.jpg");
-    width: 650px;
+    width: 300px;
 }
 
 #drag_hp_bar {
-    position: absolute;
-    width: 650px;
+    width: 300px;
     background-color: red;
-    height: 15px;
 }
 
 #drag_curr_hp {
-    position: absolute;
+    position: relative;
     background-color: green;
     width: 100%;
-    height: 100%;
 }
 
 #hero {
@@ -117,33 +111,23 @@ body {
 }
 
 #hero_hp_bar {
-    position: absolute;
-    left: 0px;
     width: 250px;
     background-color: red;
-    height: 15px;
 }
 
 #hero_curr_hp {
-    position: absolute;
+    position: relative;
     background-color: green;
     width: 100%;
-    height: 100%;
 }
 
 #hero_vs_drag {
     position: absolute;
-    top: -25%;
-    left: -45%;
-    width: 915px;
-    display: none;
+    width: 700px;
+    height: 500px;
+    left: 5px;
 }
 
 #victory {
     display: none;
-}
-
-#hero_name, #drag_name {
-    color: #ffffff;
-
 }
