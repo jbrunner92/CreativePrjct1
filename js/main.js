@@ -29,30 +29,37 @@ function init() {
 
     function generateGame() {
         $('#scenario_1').fadeIn();
+<<<<<<< HEAD
         //scenarioOne();
+=======
+        setTimeout(function() {
+            scenarioOne();
+        }, 1000);
+
+>>>>>>> origin/master
     }
 
     /*
     * Provide Scenario specific functions below within inti();
     */
     function scenarioOne() {
-
-        $(document).on('keypress', function(e) {
-            var horiz_pos = $('#dragon_slayer_1').css('left');
-            var vert_pos = $('#dragon_slayer_1').css('top');
-            console.log(horiz_pos);
+console.log("here");
+        $(document).keydown(function(event) {
+            var horiz_pos = parseInt($('#drgn_slyr_1').css('left'));
+            var vert_pos = parseInt($('#drgn_slyr_1').css('top'));
             // left = 37
             // up = 38
             // right = 39
             // down = 40
-            if (e.keyCode == 37) {
-                $('#drgn_slyr_1').animate({ left: horiz_pos + 5 });
-            } else if (e.keyCode == 38) {
-
-            } else if (e.keyCode == 39) {
-
-            } else if (e.keyCode == 40) {
-
+            console.log(event.keyCode)
+            if (event.keyCode == 37) {
+                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos + 25) + 'px' });
+            } else if (event.keyCode == 38) {
+                $('#drgn_slyr_1').animate({ 'top' : (horiz_pos - 25) + 'px' });
+            } else if (event.keyCode == 39) {
+                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos + 25) + 'px' });
+            } else if (event.keyCode == 40) {
+                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos - 25) + 'px' });
             }
 
 
