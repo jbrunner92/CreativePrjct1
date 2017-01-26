@@ -32,3 +32,25 @@ html{
 .scenarios{
     display: none;
 }
+
+.dragon_slayer_img {
+    content: url("../imgs/dragonslayer.png");
+    width: 125px;
+}
+
+.sword_img {
+    content: url("../imgs/sword.png");
+    width: 100px;
+}
+
+#drgn_slyr_1 {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+
+#sword_1 {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
