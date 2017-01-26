@@ -1,21 +1,31 @@
-var userName = "";
+$(document).ready(init());
 
-$('#play-button').click(function() {
-    $('.main').fadeOut();
-    $('#setup').fadeIn();
+function init() {
+    var userName = "";
 
-    $('#setup').keypress(function(event) {
-        var keycode = (event.keyCode ? event.keyCode : event.which);
-        if(keycode == '13'){
-            userName = $('#name-input').val() !== "" ? $('#name-input').val() : "Master Dragon Slayer";
-            $('#setup').fadeOut();
-            generateGame();
-        }
+    $('#play-button').click(function() {
+        $('.main').fadeOut();
+        $('#setup').fadeIn();
+
+        $('#setup').keypress(function(event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if(keycode == '13'){
+                var nameInput = $('#name-input').val();
+                userName = (nameInput !== "") ? nameInput : "Master Dragon Slayer";
+                $('#setup').fadeOut();
+                generateGame();
+            }
+        });
     });
-});
 
-function generateGame() {
-    var scenario = Math.floor((Math.random() * 5) + 1);
+    function generateGame() {
+        var scenario = Math.floor((Math.random() * 5) + 1);
 
-    $('#scenario_' + scenario).fadeIn();
+        $('#scenario_' + scenario).fadeIn();
+    }
+
+    /*
+    * Provide Scenario specific functions below within inti();
+    */
+
 }
