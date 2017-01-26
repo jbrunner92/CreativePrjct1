@@ -41,21 +41,38 @@ function init() {
     */
     function scenarioOne() {
         $(document).keyup(function(event) {
-            var horiz_pos = parseInt($('#drgn_slyr_1').css('left'));
-            var vert_pos = parseInt($('#drgn_slyr_1').css('top'));
-            // left = 37
-            // up = 38
-            // right = 39
-            // down = 40
+            var horiz_pos = parseInt($('#drgn_slyr_1').css('left')),
+                vert_pos = parseInt($('#drgn_slyr_1').css('top')),
+                $drgnSlyr = $('#drgn_slyr_1'),
+                $sword = $('#sword_1');
 
             if (event.keyCode == 37) {
-                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos - 25) + 'px' });
+                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos - 50) + 'px' }, isCollide($drgnSlyr, $sword));
             } else if (event.keyCode == 38) {
-                $('#drgn_slyr_1').animate({ 'top' : (vert_pos - 25) + 'px' });
+                $('#drgn_slyr_1').animate({ 'top' : (vert_pos - 50) + 'px' }, isCollide($drgnSlyr, $sword));
             } else if (event.keyCode == 39) {
-                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos + 25) + 'px' });
+                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos + 50) + 'px' }, isCollide($drgnSlyr, $sword));
             } else if (event.keyCode == 40) {
-                $('#drgn_slyr_1').animate({ 'top' : (vert_pos + 25) + 'px' });
+                $('#drgn_slyr_1').animate({ 'top' : (vert_pos + 50) + 'px' }, isCollide($drgnSlyr, $sword));
+            }
+
+            function isCollide(a, b) {
+                var obj1 = {
+                        top: a.position().top,
+                        left: a.position().left,
+                        bottom: a.position().top + a.height(),
+                        right: a.position().left + a.width()
+                    },
+                    obj2 = {
+                        top: b.position().top,
+                        left: b.position().left,
+                        bottom: b.position().top + a.height(),
+                        right: b.position().left + a.width()
+                    };
+
+                if (!((obj1.bottom < b.top) || (obj1.top > obj2.bottom) || (obj1.right < obj2.left) || (obj1.left > obj2.right)) ) {
+                    $('#scenario_1').fadeOut(scenarioTwo());
+                }
             }
 
         });
