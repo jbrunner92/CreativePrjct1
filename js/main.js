@@ -44,7 +44,7 @@ function init() {
             if ($('#sword_obtained').html() == "") {
                 $('#race').fadeOut();
                 $('#sword_obtained').fadeIn();
-                $('#sword_obtained').html("<h1>Oh, no! you must fight the dragon with the " + dragonSlayer.weapon + "</h1>");
+                $('#sword_obtained').html("<h1>Oh, no! You must fight the dragon with the " + dragonSlayer.weapon + "</h1>");
 
                 setTimeout(function() {
                     $('#scenario_1').fadeOut(scenarioTwo());
@@ -86,7 +86,7 @@ function init() {
                 if (!((obj1.bottom < obj2.top) || (obj1.top > obj2.bottom) || (obj1.right < obj2.left) || (obj1.left > obj2.right)) ) {
                     $drgnSlyr.weapon = "Sword of Destiny";
                     console.log("here")
-                    $('#sword_obtained').html("<h1>Congratulations! you obtained the Sword of Destiny!</h1>");
+                    $('#sword_obtained').html("<h1>Congratulations! <br>You obtained the Sword of Destiny!</h1>");
                     $('#race').fadeOut();
                     $('#sword_obtained').fadeIn();
 
