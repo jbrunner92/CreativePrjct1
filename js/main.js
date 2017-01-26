@@ -43,26 +43,23 @@ function init() {
     * Provide Scenario specific functions below within inti();
     */
     function scenarioOne() {
-console.log("here");
-        $(document).keydown(function(event) {
+        $(document).keyup(function(event) {
             var horiz_pos = parseInt($('#drgn_slyr_1').css('left'));
             var vert_pos = parseInt($('#drgn_slyr_1').css('top'));
             // left = 37
             // up = 38
             // right = 39
             // down = 40
-            console.log(event.keyCode)
+
             if (event.keyCode == 37) {
-                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos + 25) + 'px' });
+                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos - 25) + 'px' });
             } else if (event.keyCode == 38) {
-                $('#drgn_slyr_1').animate({ 'top' : (horiz_pos - 25) + 'px' });
+                $('#drgn_slyr_1').animate({ 'top' : (vert_pos - 25) + 'px' });
             } else if (event.keyCode == 39) {
                 $('#drgn_slyr_1').animate({ 'left' : (horiz_pos + 25) + 'px' });
             } else if (event.keyCode == 40) {
-                $('#drgn_slyr_1').animate({ 'left' : (horiz_pos - 25) + 'px' });
+                $('#drgn_slyr_1').animate({ 'top' : (vert_pos + 25) + 'px' });
             }
-
-
 
         });
     }
