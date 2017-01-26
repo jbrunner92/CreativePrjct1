@@ -69,7 +69,8 @@ html{
     bottom: 15px;
     right: 15px;
 }
-#scen_2_text{
+#scen_3_text{
+    display: none;
     position:absolute;
     top: 30%;
     left: 35%;
@@ -84,6 +85,6 @@ html{
     padding: 10px;
     text-align: center;
 }
-#scen_2_options{
+#scen_3_options{
     
 }
