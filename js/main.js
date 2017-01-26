@@ -16,27 +16,24 @@ function init() {
             if(keycode == '13'){
                 var nameInput = $('#name-input').val();
                 dragonSlayer.name = (nameInput !== "") ? nameInput : "Master Dragon Slayer";
-                $('#welcome').html("<h2>Welcome, " + dragonSlayer.name + "!</h2>");
-                $('#setup').fadeOut();
-                $('#welcome').fadeIn();
+                $('#welcome').html("<h2>Welcome, " + dragonSlayer.name + "!</h2><h4>Your village is under attack from a dragon who lives in the nearby hills. You have been chosen to slay the dragon and protect the villagers.</h4>");
+                $('#setup').fadeOut(function(){
+                    $('#welcome').fadeIn();
+                });
                 setTimeout(function(){
                     $('#welcome').fadeOut();
                     generateGame();  
-                },10000);
+                },6000);
             }
         });
     });
 
     function generateGame() {
         $('#scenario_1').fadeIn();
-<<<<<<< HEAD
         //scenarioOne();
-=======
         setTimeout(function() {
             scenarioOne();
         }, 1000);
-
->>>>>>> origin/master
     }
 
     /*
@@ -65,7 +62,8 @@ function init() {
     }
     
     function scenarioTwo(){
-        $('scenario_2').fadeIn();
+        $('#scenario_2').fadeIn();
+        $('#scenario_2').html("<div id = scen_2_text>After a short time you come to a crossroads. Which direction would you like to go?</div><div id = scen_2_options><input type = submit value = Left><input type = submit value = Right></div>");
     }
     
     function scenarioThree(){
