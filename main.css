@@ -1,0 +1,28 @@
+html{
+    background-image: url("http://wallpapers-and-backgrounds.net/wp-content/uploads/2015/11/dragon-age-inquisition-wallpaper_1.jpg");
+    width: 100%;
+}
+.main{
+    position:absolute;
+    top: 60%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}
+.main button{
+    margin-left: 40%;
+    margin-right: auto;
+}
+#game-name{
+    color:crimson;
+    text-align: center;
+}
+#play-button{
+    color:darkblue;
+    text-align: center;
+}
+.scenarios{
+    display: none;
+}
