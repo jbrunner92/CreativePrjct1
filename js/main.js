@@ -16,7 +16,7 @@ function init() {
             if(keycode == '13'){
                 var nameInput = $('#name-input').val();
                 dragonSlayer.name = (nameInput !== "") ? nameInput : "Master Dragon Slayer";
-                $('#welcome').html("<h2>Welcome, " + dragonSlayer.name + "!</h2><h4>Your village is under attack from a dragon who lives in the nearby hills. You have been chosen to slay the dragon and protect the villagers. In order to help you defeat the dragon you need to obtain a better sword</h4><h5>Obtain the Sword of Destiny within the alotted time.</h5>");
+                $('#welcome').html("<h2>Welcome, " + dragonSlayer.name + "!</h2><h4>Your village is under attack from a dragon who lives in the nearby hills. You have been chosen to slay the dragon and protect the villagers. In order to help you defeat the dragon you need to obtain a better sword</h4>");
                 $('#setup').fadeOut(function(){
                     $('#welcome').fadeIn();
                 });
