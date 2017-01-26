@@ -18,6 +18,9 @@ html{
 #game-name{
     color:crimson;
     text-align: center;
+    word-spacing: 4px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px white;
 }
 #play-button{
     color:darkblue;
