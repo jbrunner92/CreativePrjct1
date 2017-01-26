@@ -16,16 +16,19 @@ function init() {
             if(keycode == '13'){
                 var nameInput = $('#name-input').val();
                 dragonSlayer.name = (nameInput !== "") ? nameInput : "Master Dragon Slayer";
+                $('#welcome').html("<h2>Welcome, " + dragonSlayer.name + "!</h2>");
                 $('#setup').fadeOut();
-                generateGame();
+                $('#welcome').fadeIn();
+                setTimeout(function(){
+                    $('#welcome').fadeOut();
+                    generateGame();  
+                },10000);
             }
         });
     });
 
     function generateGame() {
-        var scenario =  Math.floor((Math.random() * 4) + 1);
-
-        $('#scenario_' + scenario).fadeIn();
+        $('#scenario_1').fadeIn();
         //scenarioOne();
     }
 
@@ -56,4 +59,21 @@ function init() {
 
         });
     }
+    
+    function scenarioTwo(){
+        $('scenario_2').fadeIn();
+    }
+    
+    function scenarioThree(){
+        $('scenario_3').fadeIn();
+    }
+    
+    function scenarioFour(){
+        $('scenario_4').fadeIn();
+    }
+    
+    function scenarioFive(){
+        $('scenario_5').fadeIn();
+    }
+    
 }
