@@ -112,54 +112,53 @@ function init() {
         $(document).one('keyup', function(event) {
             $('#scen_2_text').fadeOut();
             $('#hero_vs_drag').fadeIn();
-            var keycode = (event.keyCode ? event.keyCode : event.which);
-            if(keycode == '13') {
-                var dragon = {
-                    maxHP: 250,
-                    hp: 250,
-                    atk: 15
-                };
 
-                setTimeout(function() {
-                    setInterval(function() {
-                        dragonSlayer.hp -= dragon.atk;
-                        var hp = (dragonSlayer.hp / dragonSlayer.maxHP) * 100;
-                        $('#hero_curr_hp').width(hp + "%");
 
-                        if (dragon.hp > 0) {
-                            if (dragonSlayer.hp < 1) {
-                                $('#scenario_2').fadeOut();
-                                $('#victory').fadeIn();
-                                $('#victory').html("<h1>Thou art Dead!<br><br>HA HA HA HA!<br><br>HA HA HA HA!</h1><button type='button' class='button' id='play_again_2'><h2>PLAY AGAIN!</h2></button>")
-                                $('#play_again_2').click(function() {
-                                    location.reload();
-                                })
-                            }
+            var dragon = {
+                maxHP: 250,
+                hp: 250,
+                atk: 15
+            };
+
+            setTimeout(function() {
+                setInterval(function() {
+                    dragonSlayer.hp -= dragon.atk;
+                    var hp = (dragonSlayer.hp / dragonSlayer.maxHP) * 100;
+                    $('#hero_curr_hp').width(hp + "%");
+
+                    if (dragon.hp > 0) {
+                        if (dragonSlayer.hp < 1) {
+                            $('#scenario_2').fadeOut();
+                            $('#victory').fadeIn();
+                            $('#victory').html("<h1>Thou art Dead!<br><br>HA HA HA HA!<br><br>HA HA HA HA!</h1><button type='button' class='button' id='play_again_2'><h2>PLAY AGAIN!</h2></button>")
+                            $('#play_again_2').click(function() {
+                                location.reload();
+                            })
                         }
-                    }, 1000);
-                }, 1000);
-
-                $(document).keyup(function(e) {
-                    var keycode = (e.keyCode ? e.keyCode : e.which);
-                    if(keycode == '13'){
-                        dragon.hp -= dragonSlayer.atk;
-                        var hp = (dragon.hp / dragon.maxHP) * 100;
-                        $('#drag_curr_hp').width(hp + "%");
-
-                        if (dragonSlayer.hp > 0) {
-                            if (dragon.hp < 1) {
-                                $('#scenario_2').fadeOut();
-                                $('#victory').fadeIn();
-                                $('#victory').html("<h1>VICTORY!!!!<br><br>Huzzah!</h1><button type='button' id='play_again' class='button'><h2>PLAY AGAIN!</h2></button>");
-                                $('#play_again').click(function() {
-                                    location.reload();
-                                })
-                            }
-                        }
-
                     }
-                });
-            }
+                }, 1000);
+            }, 1000);
+
+            $(document).keyup(function(e) {
+                var keycode = (e.keyCode ? e.keyCode : e.which);
+                if(keycode == '13'){
+                    dragon.hp -= dragonSlayer.atk;
+                    var hp = (dragon.hp / dragon.maxHP) * 100;
+                    $('#drag_curr_hp').width(hp + "%");
+
+                    if (dragonSlayer.hp > 0) {
+                        if (dragon.hp < 1) {
+                            $('#scenario_2').fadeOut();
+                            $('#victory').fadeIn();
+                            $('#victory').html("<h1>VICTORY!!!!<br><br>Huzzah!</h1><button type='button' id='play_again' class='button'><h2>PLAY AGAIN!</h2></button>");
+                            $('#play_again').click(function() {
+                                location.reload();
+                            })
+                        }
+                    }
+
+                }
+            });
         });
     }
     
