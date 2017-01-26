@@ -57,7 +57,7 @@ function init() {
         }, 15000);
 
 
-        $(document).keyup(function(event) {
+        $(document).off().keyup(function(event) {
             var horiz_pos = parseInt($('#drgn_slyr_1').css('left')),
                 vert_pos = parseInt($('#drgn_slyr_1').css('top')),
                 $drgnSlyr = $('#drgn_slyr_1'),
@@ -109,7 +109,7 @@ function init() {
     function scenarioTwo(){
         $('#scenario_2').fadeIn();
 
-        $(document).one('keyup', function(event) {
+        $(document).off().one('keyup', function(event) {
             $('#scen_2_text').fadeOut();
             $('#hero_vs_drag').fadeIn();
 
@@ -128,7 +128,7 @@ function init() {
 
                     if (dragon.hp > 0) {
                         if (dragonSlayer.hp < 1) {
-                            $('#scenario_2').fadeOut();
+                            $('#scenario_2').hide();
                             $('#victory').fadeIn();
                             $('#victory').html("<h1>Thou art Dead!<br><br>HA HA HA HA!<br><br>HA HA HA HA!</h1><button type='button' class='button' id='play_again_2'><h2>PLAY AGAIN!</h2></button>")
                             $('#play_again_2').click(function() {
@@ -148,7 +148,7 @@ function init() {
 
                     if (dragonSlayer.hp > 0) {
                         if (dragon.hp < 1) {
-                            $('#scenario_2').fadeOut();
+                            $('#scenario_2').hide();
                             $('#victory').fadeIn();
                             $('#victory').html("<h1>VICTORY!!!!<br><br>Huzzah!</h1><button type='button' id='play_again' class='button'><h2>PLAY AGAIN!</h2></button>");
                             $('#play_again').click(function() {
