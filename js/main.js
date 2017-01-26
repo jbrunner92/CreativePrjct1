@@ -29,14 +29,10 @@ function init() {
 
     function generateGame() {
         $('#scenario_1').fadeIn();
-<<<<<<< HEAD
-        //scenarioOne();
-=======
+
         setTimeout(function() {
             scenarioOne();
         }, 1000);
-
->>>>>>> origin/master
     }
 
     /*
